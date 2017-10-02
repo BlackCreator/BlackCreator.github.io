@@ -1,0 +1,22 @@
+
+
+title: Stanislav's Mind
+email: exsidia@gmail.com
+
+
+baseurl: 
+
+url: localhost:4000/
+
+future: true
+sass:
+ style: compressed
+ 
+ 
+# Tracker
+analytics: UA-83979019-1
+ 
+markdown: kramdown
+### exclude the instructions / write-up in the README.md
+exclude:
+- README.md

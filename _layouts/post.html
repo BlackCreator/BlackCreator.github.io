@@ -1,0 +1,49 @@
+---
+---
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+
+
+<div class="container partition">
+<table style="width:100%">
+    <td style=" padding-top: 15px;
+    padding-right: 30px;
+    padding-bottom: 1px;
+    padding-left: 8px;
+	border-bottom: 1px solid black;>
+     <header class="header">
+        <a href="{{site.baseurl}}/"><h1 class="headline">{{site.title}}</h1></a>
+     </header>
+
+	</td>
+{% include nav-page.html %}
+	 
+</table>
+
+
+
+{% if page.img %}
+
+{% else %}
+{% endif %}
+       <div class="row" style="margin-top: 2em">
+        <div class="container page-container">
+       
+           <h1 class="page-title">{{page.title}}</h1>
+         
+          {{ content }}
+          
+          </div>
+    </div>
+{% include footer.html %}
+{% if page.use_math %}
+      {% include mathjax_support %}
+    {% endif %}
+
+	
+</div>
+
+</body>
+</html>
