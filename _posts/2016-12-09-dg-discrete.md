@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Interior Penalty Discontinuous Galerkin Methods&#58 The Discrete Problem
-img: dg.jpg
+img: dgpost.jpg
 use_math: true
 ---
 
