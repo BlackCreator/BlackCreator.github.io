@@ -139,6 +139,7 @@ pre a:only-of-type::before {
   //vertical-align: bottom;
   //height: 30px;
   line-height: 40px;
+  //line-height: 2vh;
   color: #000000;
   //text-shadow: 1px 1px 0 rgba(140,140,140,0.6) , -1px -1px 1px rgba(0, 0, 0, 0.34);
   @include media-query($on-palm) {
@@ -330,11 +331,13 @@ th {
     }
 }
 .news-piece-1 {
-    height: 350px;
+height: 50vh;
+    //height: 350px;
     
 }
 .news-piece-2 {
-   height: 265px;
+   //height: 265px;
+height: 43vh;
 }
 
 
@@ -462,7 +465,7 @@ th {
 }
 .oldsix.columns 
 {
-	  height: 175px;
+	  height: 25vh;//175px;
       width: 25%;
     @include media-query($on-palm) {
         width: 50%;
