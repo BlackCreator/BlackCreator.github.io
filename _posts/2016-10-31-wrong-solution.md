@@ -1,6 +1,6 @@
 ---
 layout: post
-title: When the solutions goes wrong
+title: When the solution goes wrong
 img: mel.png
 use_math: true
 ---
