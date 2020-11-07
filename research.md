@@ -14,38 +14,16 @@ I have successfully defended my master thesis on the design of the effective mod
 
 <h4>Research Projects</h4>
 Uncertainty quantification (current project, from 2018).
-
 Magnetohydrodynamics (2017-2018).
-
 Gas hydrate problems (2016 - 2017).
-
 Effective thermal coefficients (2015 - 2017).
-
 Composite materials (2014 - 2017).
 
 <h4>Research Interests</h4>
 Here are some of the things I've done in past and some I'm working on now.
-
 Numerical analysis and scientific computing (in general);
-
 Uncertaity quantification.
-
 Multilevel solvers for systems of linear algebraic equations;
-
 Finite element analysis;
-
 Nonlinear problems, phase-transition, Stefan problem;
 
-Inverse problems, numerical homogenization.
-
-<h4>Nonscientific programming stuff</h4>
-
-Here I just list of some \*old\* programs that I've done during the undergraduate studies and before.
-
-Chess in C#;
-
-Simple roguelike game in C++;
-
-Chat programs (centralized and non) in C++, C#, Java, Delphi;
-
-and many others.
