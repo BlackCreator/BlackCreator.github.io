@@ -1,128 +1,42 @@
----
-title: Main
-layout: default
----
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/main.css" type="text/css">
+<title>
+Stanislav Polishchuk's Personal Webpage
+</title>
+</head>
 
-<div class="row first-row">
-<a href="{{site.baseurl}}{{site.posts[0].url}}">
-        <div class="eight columns news-piece news-piece-1 border" style="background-image: url({{site.baseurl}}/img/{{site.posts[0].img}})">
-        <p class="news-title">{{site.posts[0].title}}</p>
-        <p class="news-exp">{{site.posts[0].excerpt | strip_html | truncate: 80 }}</p>
-        </div>
-</a>
-    
+<body>
+<div class="mainbody">
+<div class="main">
+		<div class="titlebody">
+		<div class="titlebody2">
+<div><a href="publications.html"><center>publications</center></a></div>
 
-   <div class="row row-border">
+<div><a href="research.html"><center>research</center></a></div>
 
-     <a href="{{site.baseurl}}/about/">
-        <div class="oldsix columns news-piece news-piece-2 border" style="background-image:url({{site.baseurl}}/img/about.png)">
-             <p class="news-title">About</p>
-			 <p class="news-exp">All you need to know...</p>
-        </div>
-        
-    </a>
+<div><a href="docs/cv-us.pdf"><center>CV</center></a></div>
+</div>
+		</div>
+	<div class="aboutbody">
+	<ul>
+	<li>Stanislav Y. Polishchuk</li>
+	</ul>
+	<div>Ph.D. candidate in Mathematics</div>
+	<div>at Monash University</div><div> Melbourne, Australia</div>
+	<div>stanislav.polishchuk@monash.edu</div>
+	<div>Member of SIAM, ACEMS, AMS, ANZIAM</div>
+	<div><a href="#">My CV</a></div>
+	<br>
+	<div>Skills: C++, *nix systems, Monte Carlo methods, finite element methods, software development, numerical analysis, computational simulations</div>
+	</ul>
+	</div>
 
-
-	<a href="{{site.baseurl}}/contact/">
-        <div class="oldsix columns news-piece news-piece-2" style="background-image:url({{site.baseurl}}/img/contact.jpg)">
-        <p class="news-title">Contact</p>
-        <p class="news-exp">All you want to know...</p>
-        </div>
-    
-    </a>
-<a href="{{site.baseurl}}/publications/">
-        <div class="oldsix columns news-piece news-piece-2 border" style="background-image:url({{site.baseurl}}/img/pub.jpg)">
-             <p class="news-title">My publications</p>
-            <p class="news-exp">I wrote dis...</p>
-        </div>
-        
-    </a>
-
-          <a href="{{site.baseurl}}/research/">
-        <div class="oldsix columns news-piece news-piece-2" style="background-image:url({{site.baseurl}}/img/research.jpg)">
-        <p class="news-title">Research</p>
-        <p class="news-exp">...</p>
-        </div>
-    
-    </a>
 </div>
 
 </div>
-{% assign size_m = site.posts | size | minus: 1 | modulo: 3 %}
-{% assign size_all = site.posts | size | minus: 1 %}
-{% assign size_d = site.posts | size | minus: 1 | divided_by: 3 %}
-{% for i in (1..size_d) %}
 
-  {% assign i1 = i | minus: 1 %}
-  {% assign fir = 3 | times: i1 %}
-  {% assign two = 3 | times: i1 | plus: 1 %}
-  {% assign thre = 3 | times: i1 | plus: 2 %}
-{% assign fir = fir | plus: 1 %}
-  {% assign two = two | plus: 1 %}
-  {% assign thre = thre | plus: 1 %}
-  <div class="row row-border">
-   
-   <a href="{{site.baseurl}}{{site.posts[fir].url}}">
-    <div class="four columns news-piece news-piece-2 border-2" style="background-image: url({{site.baseurl}}/img/{{site.posts[fir].img}});">
-    <p class="news-title">{{site.posts[fir].title}}</p>
-    <p class="news-exp">{{site.posts[fir].excerpt | strip_html | truncate: 80 }}</p>
-    </div>
-     </a>
-     
-    <a href="{{site.baseurl}}{{site.posts[two].url}}">
-    <div class="four columns news-piece news-piece-2 border" style="background-image: url({{site.baseurl}}/img/{{site.posts[two].img}});"> 
-    <p class="news-title">{{site.posts[two].title}}</p>
-    <p class="news-exp">{{site.posts[two].excerpt | strip_html | truncate: 80 }}</p>
-    </div>
-    </a>
-    
-    <a href="{{site.baseurl}}{{site.posts[thre].url}}">
-    <div class="four columns news-piece news-piece-2" style="background-image: url({{site.baseurl}}/img/{{site.posts[thre].img}});"> 
-    <p class="news-title">{{site.posts[thre].title}}</p>
-    <p class="news-exp">{{site.posts[thre].excerpt | strip_html | truncate: 80 }}</p>
-    </div>
-    </a>
-    
-</div>
-  
- 
-{% endfor %}
-{% if size_m == 1 %}
-
-  <div class="row row-border">
-   
-   <a href="{{site.baseurl}}{{site.posts[size_all].url}}">
-    <div class="four columns news-piece news-piece-2 border-2" style="background-image: url({{site.baseurl}}/img/{{site.posts[size_all].img}});">
-    <p class="news-title">{{site.posts[size_all].title}}</p>
-    <p class="news-exp">{{site.posts[size_all].excerpt | strip_html | truncate: 80 }}</p>
-    </div>
-     </a>
-    
-</div>
-{% endif %}
-{% if size_m == 2%}
-{% assign size_l = size_all | minus: 1%}
-{% assign size_l2 = size_all %}
-  <div class="row row-border">
-   
-   <a href="{{site.baseurl}}{{site.posts[size_l].url}}">
-    <div class="four columns news-piece news-piece-2 border-2" style="background-image: url({{site.baseurl}}/img/{{site.posts[size_l].img}});">
-    <p class="news-title">{{site.posts[size_l].title}}</p>
-    <p class="news-exp">{{site.posts[size_l].excerpt | strip_html | truncate: 80 }}</p>
-    </div>
-     </a>
-     
-    <a href="{{site.baseurl}}{{site.posts[size_l2].url}}">
-    <div class="four columns news-piece news-piece-2 border" style="background-image: url({{site.baseurl}}/img/{{site.posts[size_l2].img}});"> 
-    <p class="news-title">{{site.posts[size_l2].title}}</p>
-    <p class="news-exp">{{site.posts[size_l2].excerpt | strip_html | truncate: 80 }}</p>
-    </div>
-    </a>
-    
-</div>
-{% endif %}
-  
-<a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a>
-
-
-
+<!--<div class="wallbody"></div>-->
+</body>
+</html>
