@@ -160,7 +160,7 @@ body
 	display: grid;
 	grid-row-gap: 10px;
 	grid-template-columns: 1fr 1fr;
-	background-color: rgb(1,0,0,0.1);
+	background-color: rgb(1,0,0,0.0);
 	margin: 1em 1em;
 /*	min-width: 30em;* */
 	padding: 1em 1em;
