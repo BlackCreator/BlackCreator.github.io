@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107562224-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107562224-1');
+</script>
+<link rel="stylesheet" href="../css/main2.css" type="text/css">
+<title>
+Stanislav Polishchuk's Personal Webpage - Introduction to Monte Carlo Methods
+</title>
+</head>
+
+<body>
+<div class="mainbody">
+<div class="main2">
+<div class="header">
+	<div class="menu">
+	<ul>
+	<li><a href="../index.html">Home</a></li>
+	<li><a href="../ion.html">Blog</a></li>
+	<li><a href="../research.html">Research</a></li>
+	<li><a href="../doctrina.html">Teaching</a></li>
+	<li><a href="../publications.html">Publications</a></li>
+	</ul>
+	</div>
+</div>
+
+	<div class="expbody">
+	<h1><center>Monte Carlo methods</center></h1>
+
+
+<p> Suppose we want to estimate the value of an integral</p>
+\begin{equation}
+I=\int_Dg(x)dx,
+\end{equation}
+where $D$ is a $d$-dimensional cube $[0,1]^d$ and $x\in D$. We could use Gaussian quadrature to calculate the integral but if the domain $D$ is in a high-dimensional space or if the function $g(x)$ has nonlinear behavior then the estimation would be computationally expensive.
+
+<p>In such case, the use of Monte Carlo methods would be a more suitable approach. For that, we treat the independent variable $x$ and the function $g(x)$ as a random variable and a random function, respectively. Then we draw $N$ independent and identically distributed random samples $x_1,\ldots,x_N$ from the uniform distribution. And thus, the classic Monte Carlo estimator for the integral is defined as</p>
+\begin{equation}
+I\approx I_N=\frac{1}{N}\sum_{n=1}^Ng(x_n),
+\end{equation}
+which is equivalent to finding the expectation $\mathbb{E}[g(x)]$ of the function $g(x)$. The law of large numbers shows that the value $I_N$ converges to the integral $I$ as $N\rightarrow\infity$ with probability 1.
+
+</div>
+</div>
+
+</div>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    },
+CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="wallbody"></div>
+
+</body>
+</html>
