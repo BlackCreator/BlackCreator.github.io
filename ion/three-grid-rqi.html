@@ -36,17 +36,17 @@ Stanislav Polishchuk's Personal Webpage - Introduction to Monte Carlo Methods
 
 <p>A three-grid Rayleigh quotient method</p>
 > Input: ($\mathbf{A}_\ell, \mathbf{A}_{\ell-1}, \mathbf{A}_0, \mathbf{M}_\ell, \mathbf{M}_{\ell-1}, \mathbf{M}_0, \eta_0,\xi_0,\lambda_0, \ell$), </br>
-		where $\eta_0', \xi_0', \lambda_0'$ are the initial left and right eigenvectors at level $0$, and the initial eigenvalue.
-$\varepsilon\leftarrow10^{-10}$, $M\leftarrow1000$
-$(\eta_0,\xi_0,\lambda_0)\leftarrow$ RQI ($\mathbf{A}_{0}, \mathbf{M}_{0}, \eta_0',\xi_0',\lambda_0',\varepsilon,M$
-Interpolate the eigenfunctions from $V_0^0$ on $\mathcal{T}_0$ onto $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$: $(\eta_{\ell-1}',\xi_{\ell-1}')\leftarrow(\eta_0,\xi_0)$
-$(\eta_{\ell-1},\xi_{\ell-1},\lambda_{\ell-1})\leftarrow$ RQI ($\mathbf{A}_{\ell-1}, \mathbf{M}_{\ell-1}\eta_{\ell-1}',\xi_{\ell-1}',\lambda_{0},\varepsilon,M$)
-$\quad$ If $\ell-1 = 0$
-Output: $\lambda_1-\lambda_0$
-else
-Interpolate the eigenfunctions from $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$ onto $V_0^{\ell}$ on $\mathcal{T}_{\ell}$: $(\eta_{\ell}',\xi_{\ell}')\leftarrow(\eta_{\ell-1},\xi_{\ell-1})$
-$(\eta_\ell,\xi_\ell,\lambda_\ell)\leftarrow$ RQI ($\mathbf{A}_\ell, \mathbf{M}_\ell, \eta_\ell',\xi_\ell',\lambda_{\ell-1},\varepsilon,M$)
-Output: $\lambda_\ell - \lambda_{\ell-1}$
+	$\quad$ 	where $\eta_0', \xi_0', \lambda_0'$ are the initial left and right eigenvectors at level $0$, and the initial eigenvalue.</br>
+$\quad$ $\varepsilon\leftarrow10^{-10}$, $M\leftarrow1000$</br>
+$\quad$ $(\eta_0,\xi_0,\lambda_0)\leftarrow$ RQI ($\mathbf{A}_{0}, \mathbf{M}_{0}, \eta_0',\xi_0',\lambda_0',\varepsilon,M$</br>
+$\quad$ Interpolate the eigenfunctions from $V_0^0$ on $\mathcal{T}_0$ onto $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$: $(\eta_{\ell-1}',\xi_{\ell-1}')\leftarrow(\eta_0,\xi_0)$</br>
+$\quad$ $(\eta_{\ell-1},\xi_{\ell-1},\lambda_{\ell-1})\leftarrow$ RQI ($\mathbf{A}_{\ell-1}, \mathbf{M}_{\ell-1}\eta_{\ell-1}',\xi_{\ell-1}',\lambda_{0},\varepsilon,M$)</br>
+$\quad$ If $\ell-1 = 0$</br>
+$\quad$ Output: $\lambda_1-\lambda_0$</br>
+$\quad$ else</br>
+$\quad$ Interpolate the eigenfunctions from $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$ onto $V_0^{\ell}$ on $\mathcal{T}_{\ell}$: $(\eta_{\ell}',\xi_{\ell}')\leftarrow(\eta_{\ell-1},\xi_{\ell-1})$</br>
+$\quad$ $(\eta_\ell,\xi_\ell,\lambda_\ell)\leftarrow$ RQI ($\mathbf{A}_\ell, \mathbf{M}_\ell, \eta_\ell',\xi_\ell',\lambda_{\ell-1},\varepsilon,M$)</br>
+$\quad$ Output: $\lambda_\ell - \lambda_{\ell-1}$</br>
 
 </div>
 </div>
