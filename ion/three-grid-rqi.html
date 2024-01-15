@@ -34,18 +34,25 @@ Stanislav Polishchuk's Personal Webpage - Introduction to Monte Carlo Methods
 	<div class="expbody">
 	<h1><center>A three-grid Rayleigh quotient method</center></h1>
 
-
-<p> Suppose we want to estimate the value of an integral</p>
-\begin{equation}
-I=\int_Dg(x)dx,
-\end{equation}
-where $D$ is a $d$-dimensional cube $[0,1]^d$ and $x\in D$. We could use Gaussian quadrature to calculate the integral but if the domain $D$ is in a high-dimensional space or if the function $g(x)$ has nonlinear behavior then the estimation would be computationally expensive.
-
-<p>In such case, the use of Monte Carlo methods would be a more suitable approach. For that, we treat the independent variable $x$ and the function $g(x)$ as a random variable and a random function, respectively. Then we draw $N$ independent and identically distributed random samples $x_1,\ldots,x_N$ from the uniform distribution. And thus, the classic Monte Carlo estimator for the integral is defined as</p>
-\begin{equation}
-I\approx I_N=\frac{1}{N}\sum_{n=1}^Ng(x_n),
-\end{equation}
-which is equivalent to finding the expectation $\mathbb{E}[g(x)]$ of the function $g(x)$. The law of large numbers shows that the value $I_N$ converges to the integral $I$ as $N\rightarrow\infity$ with probability 1.
+<p>A three-grid Rayleigh quotient method</p>
+\begin{algorithm}[h!]
+	\caption{Three-grid Rayleigh Quotient iteration (TGRQI.)}
+\begin{algorithmic}[1]
+\State{Input: ($\mathbf{A}_\ell, \mathbf{A}_{\ell-1}, \mathbf{A}_0, \mathbf{M}_\ell, \mathbf{M}_{\ell-1}, \mathbf{M}_0, \bm\eta_0,\bm\xi_0,\lambda_0, \ell$), where $\bm\eta_0', \bm\xi_0', \lambda_0'$ are the initial left and right eigenvectors at level $0$, and the initial eigenvalue.}
+\State{$\varepsilon\leftarrow10^{-10}$, $M\leftarrow1000$}
+\State{$(\bm\eta_0,\bm\xi_0,\lambda_0)\leftarrow$ RQI ($\mathbf{A}_{0}, \mathbf{M}_{0}, \bm\eta_0',\bm\xi_0',\lambda_0',\varepsilon,M$)}
+\State{Interpolate the eigenfunctions from $V_0^0$ on $\mathcal{T}_0$ onto $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$: $(\bm\eta_{\ell-1}',\bm\xi_{\ell-1}')\leftarrow(\bm\eta_0,\bm\xi_0)$}
+\State{$(\bm\eta_{\ell-1},\bm\xi_{\ell-1},\lambda_{\ell-1})\leftarrow$ RQI ($\mathbf{A}_{\ell-1}, \mathbf{M}_{\ell-1}\bm\eta_{\ell-1}',\bm\xi_{\ell-1}',\lambda_{0},\varepsilon,M$)}
+\If{$\ell-1 = 0$}
+\State{Output: $\lambda_1-\lambda_0$}
+\Else
+\State{Interpolate the eigenfunctions from $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$ onto $V_0^{\ell}$ on $\mathcal{T}_{\ell}$: $(\bm\eta_{\ell}',\bm\xi_{\ell}')\leftarrow(\bm\eta_{\ell-1},\bm\xi_{\ell-1})$}
+\State{$(\bm\eta_\ell,\bm\xi_\ell,\lambda_\ell)\leftarrow$ RQI ($\mathbf{A}_\ell, \mathbf{M}_\ell, \bm\eta_\ell',\bm\xi_\ell',\lambda_{\ell-1},\varepsilon,M$)}
+\State{Output: $\lambda_\ell - \lambda_{\ell-1}$}
+\EndIf
+	\end{algorithmic}
+	\label{alg:threegrid}
+\end{algorithm}
 
 </div>
 </div>
