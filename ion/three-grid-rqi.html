@@ -35,24 +35,18 @@ Stanislav Polishchuk's Personal Webpage - Introduction to Monte Carlo Methods
 	<h1><center>A three-grid Rayleigh quotient method</center></h1>
 
 <p>A three-grid Rayleigh quotient method</p>
-\begin{algorithm}[h!]
-	\caption{Three-grid Rayleigh Quotient iteration (TGRQI.)}
-\begin{algorithmic}[1]
-\State{Input: ($\mathbf{A}_\ell, \mathbf{A}_{\ell-1}, \mathbf{A}_0, \mathbf{M}_\ell, \mathbf{M}_{\ell-1}, \mathbf{M}_0, \bm\eta_0,\bm\xi_0,\lambda_0, \ell$), where $\bm\eta_0', \bm\xi_0', \lambda_0'$ are the initial left and right eigenvectors at level $0$, and the initial eigenvalue.}
-\State{$\varepsilon\leftarrow10^{-10}$, $M\leftarrow1000$}
-\State{$(\bm\eta_0,\bm\xi_0,\lambda_0)\leftarrow$ RQI ($\mathbf{A}_{0}, \mathbf{M}_{0}, \bm\eta_0',\bm\xi_0',\lambda_0',\varepsilon,M$)}
-\State{Interpolate the eigenfunctions from $V_0^0$ on $\mathcal{T}_0$ onto $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$: $(\bm\eta_{\ell-1}',\bm\xi_{\ell-1}')\leftarrow(\bm\eta_0,\bm\xi_0)$}
-\State{$(\bm\eta_{\ell-1},\bm\xi_{\ell-1},\lambda_{\ell-1})\leftarrow$ RQI ($\mathbf{A}_{\ell-1}, \mathbf{M}_{\ell-1}\bm\eta_{\ell-1}',\bm\xi_{\ell-1}',\lambda_{0},\varepsilon,M$)}
-\If{$\ell-1 = 0$}
-\State{Output: $\lambda_1-\lambda_0$}
-\Else
-\State{Interpolate the eigenfunctions from $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$ onto $V_0^{\ell}$ on $\mathcal{T}_{\ell}$: $(\bm\eta_{\ell}',\bm\xi_{\ell}')\leftarrow(\bm\eta_{\ell-1},\bm\xi_{\ell-1})$}
-\State{$(\bm\eta_\ell,\bm\xi_\ell,\lambda_\ell)\leftarrow$ RQI ($\mathbf{A}_\ell, \mathbf{M}_\ell, \bm\eta_\ell',\bm\xi_\ell',\lambda_{\ell-1},\varepsilon,M$)}
-\State{Output: $\lambda_\ell - \lambda_{\ell-1}$}
-\EndIf
-	\end{algorithmic}
-	\label{alg:threegrid}
-\end{algorithm}
+>Input: ($\mathbf{A}_\ell, \mathbf{A}_{\ell-1}, \mathbf{A}_0, \mathbf{M}_\ell, \mathbf{M}_{\ell-1}, \mathbf{M}_0, \bm\eta_0,\bm\xi_0,\lambda_0, \ell$), 
+		where $\bm\eta_0', \bm\xi_0', \lambda_0'$ are the initial left and right eigenvectors at level $0$, and the initial eigenvalue.
+$\varepsilon\leftarrow10^{-10}$, $M\leftarrow1000$
+$(\bm\eta_0,\bm\xi_0,\lambda_0)\leftarrow$ RQI ($\mathbf{A}_{0}, \mathbf{M}_{0}, \bm\eta_0',\bm\xi_0',\lambda_0',\varepsilon,M$
+Interpolate the eigenfunctions from $V_0^0$ on $\mathcal{T}_0$ onto $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$: $(\bm\eta_{\ell-1}',\bm\xi_{\ell-1}')\leftarrow(\bm\eta_0,\bm\xi_0)$
+$(\bm\eta_{\ell-1},\bm\xi_{\ell-1},\lambda_{\ell-1})\leftarrow$ RQI ($\mathbf{A}_{\ell-1}, \mathbf{M}_{\ell-1}\bm\eta_{\ell-1}',\bm\xi_{\ell-1}',\lambda_{0},\varepsilon,M$)
+If $\ell-1 = 0$
+Output: $\lambda_1-\lambda_0$
+else
+Interpolate the eigenfunctions from $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$ onto $V_0^{\ell}$ on $\mathcal{T}_{\ell}$: $(\bm\eta_{\ell}',\bm\xi_{\ell}')\leftarrow(\bm\eta_{\ell-1},\bm\xi_{\ell-1})$
+$(\bm\eta_\ell,\bm\xi_\ell,\lambda_\ell)\leftarrow$ RQI ($\mathbf{A}_\ell, \mathbf{M}_\ell, \bm\eta_\ell',\bm\xi_\ell',\lambda_{\ell-1},\varepsilon,M$)
+Output: $\lambda_\ell - \lambda_{\ell-1}$
 
 </div>
 </div>
