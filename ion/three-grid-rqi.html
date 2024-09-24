@@ -34,7 +34,11 @@ Stanislav Polishchuk's Personal Webpage - Introduction to Monte Carlo Methods
 	<div class="expbody">
 	<h1><center>A three-grid Rayleigh quotient method</center></h1>
 
-<p>A three-grid Rayleigh quotient method was developed for accelerating computations for the multilevel Monte Carlo method for finding the approximate of the smallest eigenvalue.</p>
+<p>A three-grid Rayleigh quotient method was developed for accelerating computations for the multilevel Monte Carlo method (MLMC) for finding the approximate of the smallest eigenvalue.
+	It has been noted that both the Rayleigh quotient method and the finite element method (with linear basis) have a quadratic convergence. 
+	Since in the MLMC a sequence of grids is used, it was natural to extend the Rayleigh quotient to two and more levels.
+	The subsequent application of the method to FEM requires only one iteration. Thus, one saves a lot of operations which involve solving the linear system of equations multiple times.
+</p>
 > Input: ($\mathbf{A}_\ell, \mathbf{A}_{\ell-1}, \mathbf{A}_0, \mathbf{M}_\ell, \mathbf{M}_{\ell-1}, \mathbf{M}_0, \eta_0,\xi_0,\lambda_0, \ell$), </br>
 	$\quad$ 	where $\eta_0', \xi_0', \lambda_0'$ are the initial left and right eigenvectors at level $0$, and the initial eigenvalue.</br>
 $\quad$ $\varepsilon\leftarrow10^{-10}$, $M\leftarrow1000$</br>
