@@ -83,19 +83,19 @@ Stanislav Polishchuk's Personal Webpage - Software
 	</code></pre></figure>
 		<br></br>
 		<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">
-		const parameter<double> boundary_lin(boundary);
-    		const parameter<double> boundary_lin1(boundary1);
-    		const parameter<double> src(source);
-    		const parameter<double> kappa(diffusion);
-    		const parameter<Point>	vel(velocityy);
-		CDiffusionScalar problem;
-		problem.addTerm(Terms::EFV);
-		problem.add_parameter(Terms::EFV, 0, src);
-		problem.addTerm(Terms::IDUV);
-		problem.add_parameter(Terms::IDUV, 0, vel);
-		problem.add_parameter(Terms::IDUDV, 0, kappa);
-		problem.add_boundary_parameter(1, 0, boundary_lin);
-		problem.add_boundary_parameter(1, 2, boundary_lin);
+	const parameter<double> boundary_lin(boundary);
+    	const parameter<double> boundary_lin1(boundary1);
+    	const parameter<double> src(source);
+    	const parameter<double> kappa(diffusion);
+    	const parameter<Point>	vel(velocityy);
+	CDiffusionScalar problem;
+	problem.addTerm(Terms::EFV);
+	problem.add_parameter(Terms::EFV, 0, src);
+	problem.addTerm(Terms::IDUV);
+	problem.add_parameter(Terms::IDUV, 0, vel);
+	problem.add_parameter(Terms::IDUDV, 0, kappa);
+	problem.add_boundary_parameter(1, 0, boundary_lin);
+	problem.add_boundary_parameter(1, 2, boundary_lin);
 		</code></pre></figure>
 </div>
 </div>
