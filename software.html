@@ -75,16 +75,12 @@ Stanislav Polishchuk's Personal Webpage - Software
     	{
         	if (p.y < 0.2)
             		return 1.;
-    	};
-    	const auto boundary1 = [=](const int el, const int node, const Point& p)
-    	{
-        	return 1.;
+		return 0.;
     	};
 	</code></pre></figure>
 		<br></br>
 		<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">
 	const parameter<double> boundary_lin(boundary);
-    	const parameter<double> boundary_lin1(boundary1);
     	const parameter<double> src(source);
     	const parameter<double> kappa(diffusion);
     	const parameter<Point>	vel(velocityy);
