@@ -57,9 +57,16 @@ Stanislav Polishchuk's Personal Webpage - Software
 	</code></pre></figure>
 		<br></br>
     	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">
-    	const auto kappa = [&](const int el, const int node, const Point& p)
+    	const auto diffusion = [&](const int el, const int node, const Point& p)
     	{
         	return 1.;
+    	};
+	</code></pre></figure>
+		<br></br>
+	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">
+    	const auto velocity = [&](const int el, const int node, const Point& p)
+    	{
+        	return Point(1, 1);
     	};
 	</code></pre></figure>
 </div>
