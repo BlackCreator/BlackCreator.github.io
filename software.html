@@ -43,18 +43,19 @@ Stanislav Polishchuk's Personal Webpage - Software
 		\begin{equation}a(x)\cdot\nabla u(x) - \nabla\cdot\kappa(x)\nabla u(x) = f(x), \mspace{15mu}\text{in the unit domain }\mspace{15mu}\Omega=[0,1]\end{equation}
 	with $a(x)=[1,1]$ and $\kappa(x)=1$ using the finite element method with bilinear basis functions on rectangles, you need to construct a mesh and specify the coefficients in a (cpp) file.
 	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">
-		solvers::fem_solver&lt;CDiffusionScalar, CRegularMesh, vector&lt;double&gt;&gt; fem;
+	solvers::fem_solver&lt;CDiffusionScalar, CRegularMesh, vector&lt;double&gt;&gt; fem;
 	</code></pre></figure>
 	This will declare a solver for a scalar problem on a rectangular mesh. The last parameter corresponds to the type of the solution, i.e. <code>vector&lt;double&gt;</code> means that the solution is stored in a array of doubles.
 	<br></br>
 	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">	
-		CRegularMesh mesh{ Point{0,0}, Point{1,1}, 32, 32 };
+	CRegularMesh mesh{ Point{0,0}, Point{1,1}, 32, 32 };
 	</code></pre></figure>
 	This will create a mesh with 32x32 elements in the unit domain.
 	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">
-		vector&lt;double&gt; solution;
+	vector&lt;double&gt; solution;
 	</code></pre></figure>
 		<br></br>
+	Now to declare various parameters for a problem functions in the form <code>func(Element Material, Node Material, Point)</code> are being used.
 	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">
 	const auto source = [=](const int el, const int node, const Point& p)
         {
