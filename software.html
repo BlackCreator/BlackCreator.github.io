@@ -37,7 +37,9 @@ Stanislav Polishchuk's Personal Webpage - Research Experience
 	This library contains an implementation of the finite element method utilizing lagrange and hierarchical basis functions to solve the convection-diffusion problem in 2D using both triangular and rectangular elements.
 
 	<div><a href="https://github.com/aion-synch/livius" target="_blank"> GitHub Page</a></div>
-	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">solvers::fem_solver&lt;CDiffusionScalar, CRegularMesh, vector&lt;double&gt;&gt; fems;</code></pre></figure>
+	To run a convection-diffusion problem
+		\begin{equation}a\cdot\nabla u - \nabla\cdot\kappa\nabla u = f, \end{equation}
+	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">solvers::fem_solver&lt;CDiffusionScalar, CRegularMesh, vector&lt;double&gt;&gt; fem;</code></pre></figure>
 </div>
 </div>
 
