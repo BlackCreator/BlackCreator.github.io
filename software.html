@@ -151,6 +151,14 @@ void test()
 	problem.add_boundary_parameter(1, 0, boundary_lin);
 	problem.add_boundary_parameter(1, 2, boundary_lin);
 	fem.solver_eigen(&problem, &mesh, &solution);
+
+	auto [X, Y] = matplot::meshgrid(matplot::iota(0, .01, 1), matplot::iota(0, 0.01, 1));
+    	auto Z = matplot::transform(X, Y, [&](double x, double y) {
+        	return fems.get_value(mesh, solution, Point(x, y));
+    	});
+    	matplot::surf(X, Y, Z);
+    	//matplot::fcontour(sol)->n_levels(10).filled(true);
+    	matplot::show();
 }
 	</code></pre></figure>
 </div>
