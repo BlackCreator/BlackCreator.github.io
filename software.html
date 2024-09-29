@@ -50,7 +50,7 @@ Stanislav Polishchuk's Personal Webpage - Software
 	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">vector&lt;double&gt; solution;</code></pre></figure>
 		<br></br>
 	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">
-	const auto f = [=](const Point& p)
+	const auto source = [=](const int el, const int node, const Point& p)
         {
         	return 0.;
     	};
@@ -71,16 +71,31 @@ Stanislav Polishchuk's Personal Webpage - Software
 	</code></pre></figure>
 		<br></br>
 	<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">
-    	const auto bdn = [=](const int el, const int node, const Point& p)
+    	const auto boundary = [=](const int el, const int node, const Point& p)
     	{
         	if (p.y < 0.2)
             		return 1.;
     	};
-    	const auto bdn1 = [=](const int el, const int node, const Point& p)
+    	const auto boundary1 = [=](const int el, const int node, const Point& p)
     	{
         	return 1.;
     	};
 	</code></pre></figure>
+		<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">
+		const parameter<double> boundary_lin(boundary);
+    		const parameter<double> boundary_lin1(boundary1);
+    		const parameter<double> src(source);
+    		const parameter<double> kappa(diffusion);
+    		const parameter<Point>	vel(velocityy);
+		CDiffusionScalar problem;
+		problem.addTerm(Terms::EFV);
+		problem.add_parameter(Terms::EFV, 0, src);
+		problem.addTerm(Terms::IDUV);
+		problem.add_parameter(Terms::IDUV, 0, vel);
+		problem.add_parameter(Terms::IDUDV, 0, kappa);
+		problem.add_boundary_parameter(1, 0, boundary_lin);
+		problem.add_boundary_parameter(1, 2, boundary_lin);
+		</code></pre></figure>
 </div>
 </div>
 
