@@ -36,13 +36,18 @@ Stanislav Polishchuk's Personal Webpage - A Three-Grid Rayleigh Quotient Method
 
 <p>A three-grid Rayleigh quotient method was developed for accelerating computations for the multilevel Monte Carlo method (MLMC) for finding the approximate of the smallest eigenvalue.
 	It has been noted that both the Rayleigh quotient method and the finite element method (with linear basis) have a quadratic convergence. 
-	Since in the MLMC a sequence of grids is used, it was natural to extend the Rayleigh quotient to two and more levels.
-	The subsequent application of the method to FEM requires only one iteration saving a lot of operations which involve solving the linear system of equations multiple times.
+	Since a sequence of grids in the MLMC is used, it was natural to extend the Rayleigh quotient to two and more levels.
+	The subsequent applications of the method requires only one iteration saving a lot of operations which involve solving the linear system of equations multiple times. 
+	A general eigenvalue problem obtained with the use of FEM or some other similar method has the following matrix form:
 </p>
+\begin{equation}
+		\mathbf{A}_\ell\eta_\ell=\lambda_\ell\mathbf{M}\eta_\ell.
+\end{equation}
+		The three-grid Rayleigh quotient algorithm:
 > Input: $(\mathbf{A}_\ell, \mathbf{A}_{\ell-1}, \mathbf{A}_0, \mathbf{M}_\ell, \mathbf{M}_{\ell-1}, \mathbf{M}_0, \eta_0,\xi_0,\lambda_0, \ell)$, </br>
 >	$\quad$ 	where $\eta_0', \xi_0', \lambda_0'$ are the initial left and right eigenvectors at level $0$, and the initial eigenvalue.</br>
 > $\quad$ $\varepsilon\leftarrow10^{-10}$, $M\leftarrow1000$</br>
-> $\quad$ $(\eta_0,\xi_0,\lambda_0)\leftarrow$ RQI ($\mathbf{A}_{0}, \mathbf{M}_{0}, \eta_0',\xi_0',\lambda_0',\varepsilon,M$</br>
+> $\quad$ $(\eta_0,\xi_0,\lambda_0)\leftarrow$ RQI $(\mathbf{A}_{0}, \mathbf{M}_{0}, \eta_0',\xi_0',\lambda_0',\varepsilon,M)$</br>
 > $\quad$ Interpolate the eigenfunctions from $V_0^0$ on $\mathcal{T}_0$ onto $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$: $(\eta_{\ell-1}',\xi_{\ell-1}')\leftarrow(\eta_0,\xi_0)$</br>
 > $\quad$ $(\eta_{\ell-1},\xi_{\ell-1},\lambda_{\ell-1})\leftarrow$ RQI $(\mathbf{A}_{\ell-1}, \mathbf{M}_{\ell-1}, \eta_{\ell-1}',\xi_{\ell-1}',\lambda_{0},\varepsilon,M)$</br>
 > $\quad$ If $\ell-1 = 0$</br>
