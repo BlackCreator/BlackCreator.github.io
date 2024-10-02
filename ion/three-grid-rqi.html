@@ -52,7 +52,8 @@ Stanislav Polishchuk's Personal Webpage - A Three-Grid Rayleigh Quotient Method
 > $\quad$ $\quad$ $(\eta_\ell,\xi_\ell,\lambda_\ell)\leftarrow$ RQI ($\mathbf{A}_\ell, \mathbf{M}_\ell, \eta_\ell',\xi_\ell',\lambda_{\ell-1},\varepsilon,M$)</br>
 > $\quad$ Output: $\lambda_\ell - \lambda_{\ell-1}$</br>
 
-Here $\mathbf{A}_\ell$ and $\mathbf{M}_\ell$ are the left hand side and the right hand side matrices obtained from discretization of the problem using a mesh $\mathcal{T}_\ell$ corresponding to the meshsize $h_\ell$. 
+Here $\mathbf{A}_\ell$ and $\mathbf{M}_\ell$ are the left hand side and the right hand side matrices obtained from discretization of the problem using a mesh $\mathcal{T}_\ell$ corresponding to the meshsize $h_\ell$
+with $V_\ell$ being a functional space.
 RQI $(\mathbf{A}_{\ell-1}, \mathbf{M}_{\ell-1}, \eta_{\ell-1}',\xi_{\ell-1}',\lambda_{0},\varepsilon,M)$ is an implementation of the Rayleigh quotient method.
 <h2>References</h2>
 <ul>
