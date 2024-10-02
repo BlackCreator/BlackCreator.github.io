@@ -39,7 +39,7 @@ Stanislav Polishchuk's Personal Webpage - A Three-Grid Rayleigh Quotient Method
 	Since in the MLMC a sequence of grids is used, it was natural to extend the Rayleigh quotient to two and more levels.
 	The subsequent application of the method to FEM requires only one iteration. Thus, one saves a lot of operations which involve solving the linear system of equations multiple times.
 </p>
-<figure class="highlight"><pre>
+<pre>
 > Input: ($\mathbf{A}_\ell, \mathbf{A}_{\ell-1}, \mathbf{A}_0, \mathbf{M}_\ell, \mathbf{M}_{\ell-1}, \mathbf{M}_0, \eta_0,\xi_0,\lambda_0, \ell$), </br>
 >	$\quad$ 	where $\eta_0', \xi_0', \lambda_0'$ are the initial left and right eigenvectors at level $0$, and the initial eigenvalue.</br>
 > $\quad$ $\varepsilon\leftarrow10^{-10}$, $M\leftarrow1000$</br>
@@ -52,7 +52,7 @@ Stanislav Polishchuk's Personal Webpage - A Three-Grid Rayleigh Quotient Method
 > $\quad$ Interpolate the eigenfunctions from $V_0^{\ell-1}$ on $\mathcal{T}_{\ell-1}$ onto $V_0^{\ell}$ on $\mathcal{T}_{\ell}$: $(\eta_{\ell}',\xi_{\ell}')\leftarrow(\eta_{\ell-1},\xi_{\ell-1})$</br>
 > $\quad$ $(\eta_\ell,\xi_\ell,\lambda_\ell)\leftarrow$ RQI ($\mathbf{A}_\ell, \mathbf{M}_\ell, \eta_\ell',\xi_\ell',\lambda_{\ell-1},\varepsilon,M$)</br>
 > $\quad$ Output: $\lambda_\ell - \lambda_{\ell-1}$</br>
-</pre></figure>
+</pre>
 <h2>References</h2>
 <ul>
 <li><a href="https://link.springer.com/content/pdf/10.1007/s10915-024-02539-9.pdf" target="_blank">T. Cui, H. De Sterck, A. D. Gilbert, S. Polishchuk, R. Scheichl. Multilevel Monte Carlo Methods for Stochastic Convection–Diffusion Eigenvalue Problems. Journal of Scientific Computing 99, 77 (2024). https://doi.org/10.1007/s10915-024-02539-9.</a></li>
