@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107562224-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107562224-1');
+</script>
+<link rel="stylesheet" href="../css/main2.css" type="text/css">
+<title>
+Stanislav Polishchuk's Personal Webpage - Minecraft
+</title>
+</head>
+
+<body>
+<div class="mainbody">
+<div class="main2">
+<div class="header">
+	<div class="menu">
+	<ul>
+	<li><a href="../index.html">Home</a></li>
+	<li><a href="../ion.html">Notes</a></li>
+	<li><a href="../research.html">Research</a></li>
+	<li><a href="doctrina.html">Teaching</a></li>
+	<li><a href="../publications.html">Publications</a></li>
+	<li><a href="../software.html">Software</a></li>
+	</ul>
+	</div>
+</div>
+
+	<div class="expbody">
+	<h1><center>My Little Minecraft World</center></h1>
+
+<center><img src="../img/minecraft/2026-09-10_12.54.34.png" /></center>
+These are some screenshots from my Minecraft world (survival) which has been around for quite a long time. Periodically, here will appear new pictures.
+</div>
+</div>
+
+</div>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    },
+CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="wallbody"></div>
+
+</body>
+</html>
