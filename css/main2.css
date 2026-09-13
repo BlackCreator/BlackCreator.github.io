@@ -344,6 +344,20 @@ a
 	margin: 15px;
 }
 
+.container
+{
+	width: 960;
+	height: 540;
+}
+
+.container img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+
 .highlight .hll { background-color: #ffffcc }
 .highlight  { background: #111111; }
 .highlight .c { color: #008000 } /* Comment */
